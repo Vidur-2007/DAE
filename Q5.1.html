@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+body{
+    margin:0;
+}
+
+.navbar{
+    background:black;
+    overflow:hidden;
+}
+
+.navbar a{
+    color:white;
+    padding:14px 20px;
+    display:block;
+    text-decoration:none;
+}
+
+.menu{
+    display:flex;
+}
+
+.icon{
+    display:none;
+}
+
+@media(max-width:600px){
+
+.menu{
+    display:none;
+    flex-direction:column;
+}
+
+.icon{
+    display:block;
+    color:white;
+    padding:14px;
+    cursor:pointer;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="icon" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+
+    let menu = document.getElementById("menu");
+
+    if(menu.style.display === "flex"){
+        menu.style.display = "none";
+    }
+    else{
+        menu.style.display = "flex";
+    }
+}
+
+</script>
+
+</body>
+</html>

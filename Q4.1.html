@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.board{
+    display:grid;
+    grid-template-columns: repeat(8,60px);
+}
+
+.box{
+    width:60px;
+    height:60px;
+}
+
+.black{
+    background:black;
+}
+
+.white{
+    background:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="board">
+
+<script>
+
+for(let i=0;i<64;i++){
+
+    document.write(`<div class="box ${(i + Math.floor(i/8)) % 2 == 0 ? 'white':'black'}"></div>`);
+
+}
+
+</script>
+
+</div>
+
+</body>
+</html>

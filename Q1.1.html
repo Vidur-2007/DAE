@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      background: #f2f2f2;
+    }
+
+    .container{
+      width: 300px;
+      margin: 50px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, button{
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button{
+      background: blue;
+      color: white;
+      border: none;
+    }
+
+    #message{
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>Registration Form</h2>
+
+  <form id="form">
+
+    <input type="text" id="name" placeholder="Enter Name">
+
+    <input type="email" id="email" placeholder="Enter Email">
+
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+    <input type="text" id="mobile" placeholder="Enter Mobile Number" maxlength="10">
+
+    <button type="submit">Register</button>
+
+  </form>
+
+  <p id="message"></p>
+
+</div>
+
+<script>
+
+  // Allow only numbers in mobile field
+  document.getElementById("mobile").oninput = function(){
+    this.value = this.value.replace(/[^0-9]/g,'');
+  };
+
+  document.getElementById("form").onsubmit = function(e){
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let mobile = document.getElementById("mobile").value;
+
+    let message = document.getElementById("message");
+
+    if(name=="" || email=="" || password=="" || confirmPassword=="" || mobile==""){
+      message.innerHTML = "All fields are required";
+      message.style.color = "red";
+    }
+
+    else if(password != confirmPassword){
+      message.innerHTML = "Passwords do not match";
+      message.style.color = "red";
+    }
+
+    else if(mobile.length != 10){
+      message.innerHTML = "Enter 10 digit mobile number";
+      message.style.color = "red";
+    }
+
+    else{
+      message.innerHTML = "Registration Successful";
+      message.style.color = "green";
+    }
+
+  };
+
+</script>
+
+</body>
+</html>
