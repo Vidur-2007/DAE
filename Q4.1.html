@@ -30,10 +30,13 @@
 
 <script>
 
-for(let i=0;i<64;i++){
-
-    document.write(`<div class="box ${(i + Math.floor(i/8)) % 2 == 0 ? 'white':'black'}"></div>`);
-
+for (let i = 0; i < 64; i++) {
+    
+    const row = Math.floor(i / 8);
+   
+    const colorClass = (i + row) % 2 === 0 ? 'white' : 'black';
+    
+    document.write(`<div class="box ${colorClass}"></div>`);
 }
 
 </script>
