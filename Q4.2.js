@@ -18,11 +18,11 @@ const studentSchema = new mongoose.Schema({
 });
 
 
-const Student = mongoose.model("Student", studentSchema);//create model for Insert,fetch,Update data
+const Student = mongoose.model("Student", studentSchema);
 
 app.get("/students", async (req, res) => {
-  const data = await Student.find(); //Fetch all students from DB
-  res.json(data); //send data as JSON response
+  const data = await Student.find(); 
+  res.json(data); 
 });
 
 
